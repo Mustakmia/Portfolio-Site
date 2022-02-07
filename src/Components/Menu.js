@@ -1,17 +1,18 @@
 import React from 'react'
 import styled from 'styled-components';
 import GitHub from '@material-ui/icons/GitHub';
-import Pinterest from '@material-ui/icons/Pinterest';
 
-function Menu({menuItem}) {
+
+function Menu({ menuItem }) {
     return (
         <MenuItemStyled >
             {
-                menuItem.map((item)=>{
-                    return <div className="grid-item" key={item.id}>
-                        <div className="portfolio-content">
-                            <div className="portfolio-image">
-                                <img src={item.image} alt=""/>
+                menuItem.map((item) => {
+                    return <div className=" grid-item 
+                    " key={item.id}>
+                        <div className="portfolio-content ">
+                            <div className="portfolio-image ">
+                                <img src={item.image} alt="" />
                                 <ul>
                                     <li>
                                         <a href={item.link1}>
@@ -20,7 +21,12 @@ function Menu({menuItem}) {
                                     </li>
                                     <li>
                                         <a href={item.link2}>
-                                            <Pinterest />
+                                            < GitHub />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href={item.link2}>
+                                            <span>Live site</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -37,10 +43,10 @@ function Menu({menuItem}) {
 
 const MenuItemStyled = styled.div`
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 3fr);
     grid-gap: 2rem;
     @media screen and (max-width:920px){
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 2fr);
     }
     @media screen and (max-width:670px){
         grid-template-columns: repeat(1, 1fr);
@@ -127,7 +133,7 @@ const MenuItemStyled = styled.div`
                         }
                     }
                     svg{
-                        font-size: 2rem;
+                        font-size: rem;
                     }
                 }
                 &::before{

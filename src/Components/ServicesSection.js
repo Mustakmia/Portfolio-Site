@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {InnerLayout} from '../styles/Layouts';
+import { InnerLayout } from '../styles/Layouts';
 import Title from '../Components/Title';
 import ServiceCard from '../Components/ServiceCard';
 import design from '../img/design.svg';
@@ -13,21 +13,21 @@ function ServicesSection() {
             <ServicesSectionStyled>
                 <Title title={'Services'} span={'services'} />
                 <div className="services">
-                    <ServiceCard 
-                        image={design} 
-                        title={'Web Design'} 
+                    <ServiceCard
+                        image={design}
+                        title={'Web Design'}
                         paragraph={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur ratione quod.'}
                     />
                     <div className="mid-card">
-                        <ServiceCard 
-                            image={intelligence} 
-                            title={'Artificial Intelligence'} 
+                        <ServiceCard
+                            image={intelligence}
+                            title={'Web Development'}
                             paragraph={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur ratione quod.'}
                         />
                     </div>
-                    <ServiceCard 
-                        image={gamedev} 
-                        title={'Game Development'} 
+                    <ServiceCard
+                        image={gamedev}
+                        title={'App Design '}
                         paragraph={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur ratione quod.'}
                     />
                 </div>

@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import { MainLayout, InnerLayout } from '../styles/Layouts';
 import Title from '../Components/Title';
@@ -7,11 +6,25 @@ import PhoneIcon from '@material-ui/icons/Phone';
 import EmailIcon from '@material-ui/icons/Email';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import ContactItem from '../Components/ContactItem';
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 function ContactPage() {
     const phone = <PhoneIcon />
     const email = <EmailIcon />
     const location = <LocationOnIcon />
+    const form = useRef();
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs.sendForm('service_tpd08ro', 'template_2iiemro', form.current, 'user_DJUKySUeFbxFrPd8mX15T')
+            .then((result) => {
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
+            });
+    };
+
     return (
         <MainLayout>
             <Title title={'Contact'} span={'Contact'} />
@@ -21,9 +34,9 @@ function ContactPage() {
                         <div className="contact-title">
                             <h4>Get In Touch</h4>
                         </div>
-                        <form className="form">
+                        <form ref={form} onSubmit={sendEmail} className="form">
                             <div className="form-field">
-                                <label htmlFor="name"  >Enter your name*</label>
+                                <label htmlFor="name" >Enter your name*</label>
                                 <input type="text" id="name" />
                             </div>
                             <div className="form-field">
